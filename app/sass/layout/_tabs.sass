@@ -8,8 +8,11 @@
 .tab
     &__item
         opacity: 0.5
+        transition: 0.4s
         cursor: pointer
         &.active
+            opacity: 1
+        &:hover
             opacity: 1
     &__title
         font-size: 1.25rem
@@ -27,3 +30,6 @@
             position: absolute
             left: 25%
             bottom: 0
+            transition: 0.4s
+            [class*=item]:hover &
+                width: 90%

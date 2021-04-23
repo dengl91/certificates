@@ -218,10 +218,28 @@ input
     margin: 0 2rem 0 0
 
 nav
+    height: 100%
     display: flex
     flex: auto
     justify-content: space-between
     margin: 0 3rem
+    a
+        display: flex
+        align-items: center
+        position: relative
+        &::after
+            content: ''
+            width: 120%
+            height: 10px
+            background: var(--main)
+            border-radius: 0 0 8px 8px
+            position: absolute
+            top: 0
+            left: -10%
+            opacity: 0
+        &:hover
+            &::after
+                opacity: 1
 
 select
     width: 100%

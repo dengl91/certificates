@@ -33,6 +33,9 @@
             transition: 0.3s
             .active &
                 transform: rotate(45deg)
+        &:hover
+            &::after
+                background: url(../img/icons/plus__dark.svg) no-repeat 50% var(--main)
     &__description
         font-size: 0.875rem
         padding: 0 0 20px 0
