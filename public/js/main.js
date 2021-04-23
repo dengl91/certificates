@@ -16,6 +16,23 @@
             $('.' + sibling).toggleClass('active');
         });
 
+        // slick
+
+        $('.features__content').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 980,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
+            ]
+        });
+
         // Lazy and counters
         $(window).scroll( function() {
             $('[data-count]').each(function () {
@@ -73,6 +90,53 @@
             return (top >= viewport_top && top < viewport_bottom) ||
             (bottom > viewport_top && bottom <= viewport_bottom) ||
             (height > viewport_height && top <= viewport_top && bottom >= viewport_bottom)
+        }
+
+        // modal
+
+        $('.modal').mousedown( function(e) {
+            if (e.target !== this) return;
+            $(this).removeClass('active');
+        });
+
+        // search
+
+        $('.search__input').on('keyup', function() {
+            let query = $(this).val();
+            if ( query.length > 0 ) {
+                $(this).siblings('.search__clear').addClass('active');
+                $(this).siblings('.search__submit').prop('disabled', false);
+            } else {
+                $(this).siblings('.search__clear').removeClass('active');
+                $(this).siblings('.search__submit').prop('disabled', true);
+            }
+        });
+
+        $('.search__clear').on('click', function() {
+            clearSearch();
+        });
+
+        $(window).scroll( function() {
+            if ( $(window).scrollTop() == 0 ) {
+                $('.modal__search').css('transform', 'translateY(0)');
+            }
+            if ( $(window).scrollTop() > 0 && $(window).scrollTop() < 300 ) {
+                $('.modal__search').css('transform', 'translateY(-' + $(window).scrollTop() / 2 + 'px)');
+            }
+            if ( $(window).scrollTop() >= 300 ) {
+                if ( $('.modal__search').hasClass('active') ) {
+                    $('.modal__search').addClass('swipeup');
+                    setTimeout(() => {
+                        $('.modal__search').removeClass('swipeup active');
+                    }, 600);
+                }
+            }
+        });
+
+        function clearSearch() {
+            $('.search__input').val('');
+            $('.search__clear').removeClass('active');
+            $('.search__submit').prop('disabled', true);
         }
 
         // Tabs

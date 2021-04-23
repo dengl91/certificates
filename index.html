@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сертификаты</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" href="public/css/common.css">
 </head>
 <body>
@@ -27,17 +29,27 @@
                 <a href="">Контакты</a>
             </nav>
             <div class="search">
-                <div class="search__btn">Поиск</div>
+                <div class="search__btn" data-control='modal__search'>Поиск</div>
             </div>
             <div class="btn btn--stroke">Консультация</div>
         </div>
     </header>
 
+    <div class="modal modal__search">
+        <div class="container">
+            <div class="search__content animate__animated animate__slideInDown animate__faster">
+                <input type="text" class="search__input" name="s" placeholder="Введите слово или словосочетание">
+                <span class="search__clear"></span>
+                <input type="submit" class="search__submit" value="Поиск" disabled>
+            </div>
+        </div>
+    </div>
+
     <section class="banner">
         <div class="container">
             <div class="banner__content">
-                <h1>Сертификаты.бел</h1>
-                <h3>Услуги по сертификации и стандартизации на территории РБ и ЕАЭС</h3>
+                <h1 class="animate__animated animate__fadeIn">Сертификаты.бел</h1>
+                <h3 class="animate__animated animate__fadeIn delay--200">Услуги по сертификации и стандартизации на территории РБ и ЕАЭС</h3>
                 <a href="" class="btn">Узнать подробнее</a>
             </div>
         </div>
@@ -140,7 +152,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-50 d-flex flex-col">
-                    <h2 class="main__title">Блог</h2>
+                    <a href="/blog" class="main__title">Блог</a>
                     <a href="" class="blog__short-item">
                         <div class="blog__date">10.11.2020</div>
                         <div class="blog__short-title">Оказывается, сознание соотечественников не замутнено<span></span></div>
@@ -317,6 +329,7 @@
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 	<script src="public/js/main.js"></script>
 
 </body>
