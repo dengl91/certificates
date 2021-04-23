@@ -1,0 +1,45 @@
+// 
+// Theme Name: New Clean Template
+// service.sass
+//
+// app/sass/layout/
+//
+
+.service
+    position: relative
+    &::after
+        content: ''
+        width: 54%
+        height: 80%
+        background: var(--stroke)
+        position: absolute
+        top: 0
+        left: 0
+    &__content
+        display: flex
+        flex-wrap: wrap
+    &__item
+        width: 50%
+        height: 6rem
+        font-weight: 500
+        background: #fff
+        border: 1px solid var(--stroke)
+        padding: 1.25rem
+        &:hover
+            background: var(--main)
+            border-color: var(--main)
+        &:first-child
+            border-radius: 8px 0 0 0
+        &:nth-child(2)
+            border-radius: 0 8px 0 0
+        &:last-child
+            border-radius: 0 8px 0 0
+        &:nth-last-child(2)
+            border-radius: 0 0 0 8px
+    .pl
+        padding-left: 100px
+
+@media (max-width: 1180px)
+    .service
+        .pl
+            padding: 0 10px

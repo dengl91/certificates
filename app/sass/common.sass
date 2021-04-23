@@ -1,0 +1,577 @@
+// 
+// Theme Name: New Clean Template
+// Version: 3.6
+// Tags: clean, development, html5, sass, jquery, slick.js
+// Description: Clean wordpress theme with slick and visible js function
+// Author: DHL
+// Author URI: telegram @dhljob
+//
+
+:root
+    --container: 1180px
+    --size: 16px
+    --text: #333333
+    --gray: #828282
+    --main: #FFDB2D
+    --main__hover: #FFE568
+    --stroke: #F4F4F4
+    --blue: #60acd4
+    --blue__light: #E9EFFB
+    --orage__blend: #fff5e4
+    --ocean: #77c3c3
+    --ocean__light: #e4f3f3
+    --violet: #a465dd
+    --violet__light: #f0e4fa
+    --bg__gray: #F6F7F8
+    --yellow: #fe9f00
+    --yellow__light: #fff5e4
+    --yellow__blend: #FCD60D80
+    --yellow__dark: #CAAC0E
+    --blue__blend: #548cde80
+    --brown: #CAAC0E
+    --orange: #F4C82D
+    --green: #58CF6D
+    --placeholder: #BEC2C7
+    --input: 3.75rem
+    --select: 2.875rem
+    --search: 2.4rem
+    --telegram: #009DEC
+    --whatsapp: #25D366
+
+@font-face
+    font-family: 'Geometria'
+    font-weight: 400
+    src: url('../fonts/Geometria.woff') format("woff")
+
+@font-face
+    font-family: 'Geometria'
+    font-weight: 500
+    src: url('../fonts/Geometria-Medium.woff') format("woff")
+
+@font-face
+    font-family: 'Geometria'
+    font-weight: 700
+    src: url('../fonts/Geometria-Bold.woff') format("woff")
+
+html
+    font-family: 'Geometria', sans-serif
+    font-size: var(--size)
+    color: var(--text)
+    scroll-behavior: smooth
+body
+    padding: 0
+    margin: 0
+    &.unscroll
+        overflow: hidden
+        padding: 0 15px 0 0
+
+a
+    color: inherit
+    text-decoration: none
+*
+    box-sizing: border-box
+input:focus
+    outline: none
+button:focus
+    outline: none
+textarea:focus
+    outline: none
+
+.container
+    width: 100%
+    height: 100%
+    max-width: var(--container)
+    padding: 0 20px
+    margin: auto
+    position: relative
+    z-index: 1
+
+.row
+    display: flex
+    margin: 0 -10px
+.d-flex
+    display: flex
+.flex-wrap
+    flex-wrap: wrap
+.flex-col
+    flex-direction: column
+.left, .right
+    width: 50%
+    padding: 0 20px
+.col-20
+    width: 20%
+.col-25
+    width: 25%
+.col-30
+    width: 30%
+.col-33
+    width: 33.33%
+.col-35
+    width: 35%
+.col-40
+    width: 40%
+.col-50
+    width: 50%
+.col-60
+    width: 60%
+.col-65
+    width: 65%
+.col-70
+    width: 70%
+.col-75
+    width: 75%
+.col-80
+    width: 80%
+.col-grow
+    flex-grow: 1
+[class^=col]
+    padding: 0 10px
+
+.aic
+    align-items: center
+.jcc
+    justify-content: center
+.jcsb
+    justify-content: space-between
+.jcfe
+    justify-content: flex-end
+
+.yellow
+    color: var(--yellow)
+.blue
+    color: var(--blue)
+.ocean
+    color: var(--ocean)
+.violet
+    color: var(--violet)
+
+.bg--yellow
+    background: var(--yellow__light)
+.bg--blue
+    background: var(--blue__light)
+.bg--ocean
+    background: var(--ocean__light)
+.bg--violet
+    background: var(--violet__light)
+
+[class*=__img]
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+section
+    padding: 3rem 0
+    position: relative
+
+input
+    width: 100%
+    font-family: 'Geometria', sans-serif
+    font-size: 0.875rem
+    color: var(--gray)
+    line-height: 2.5rem
+    background: var(--stroke)
+    border: 1px solid var(--gray)
+    border-radius: 8px
+    padding: 0 1.25rem
+    margin: 0
+    -webkit-appearance: none
+    &[type=submit]
+        color: var(--text)
+        background: var(--main)
+        border: 1px solid var(--main)
+        cursor: pointer
+        &:hover
+            background: var(--main__hover)
+            border: 1px solid var(--main__hover)
+
+.header
+    height: 100px
+    position: relative
+    z-index: 2
+    .container
+        display: flex
+        align-items: center
+    .row
+        flex: auto
+        align-items: center
+    &__search
+        display: flex
+        flex-grow: 1
+        margin: 0 30px 0 0
+        input[type=text]
+            color: var(--gray)
+            line-height: 46px
+            border: 1px solid var(--stroke)
+            border-radius: 6px 0 0 6px
+            flex: auto
+            padding: 0 18px
+        input[type=submit]
+            background: url(../img/icons/search.svg) no-repeat 50% var(--stroke)
+            border: none
+            border-radius: 0 6px 6px 0
+            flex: 0 0 52px
+            cursor: pointer
+            -webkit-appearance: none
+
+.logo
+    margin: 0 2rem 0 0
+
+nav
+    display: flex
+    flex: auto
+    justify-content: space-between
+    margin: 0 3rem
+
+select
+    width: 100%
+    font-size: 0.875rem
+    color: var(--gray)
+    line-height: var(--select)
+    background: url(../img/icons/arrow__down.svg) no-repeat right 1rem top 50% #fff
+    border: 1px solid var(--stroke)
+    border-radius: 4px
+    padding: 0 1rem
+    -webkit-appearance: none
+
+.social
+    display: flex
+    align-items: center
+    padding: 0 20px 0 0
+    &__item
+        width: 18px
+        height: 18px
+        background-repeat: no-repeat
+        background-position: 50%
+        background-size: contain
+        margin: 0 0 0 15px
+        &.telegram
+            background-image: url(../img/social/telegram.svg)
+        &.vk
+            background-image: url(../img/social/vk.svg)
+        &.instagram
+            background-image: url(../img/social/instagram.svg)
+        &.youtube
+            background-image: url(../img/social/youtube.svg)
+        &.whatsapp
+            background-image: url(../img/social/whatsapp.svg)
+
+h1
+    font-size: 2.625rem
+    margin: 0 0 1rem 0
+h2
+    font-size: 1.5rem
+    font-weight: 600
+    margin: 1rem 0 3rem 0
+    display: block
+h3
+    font-size: 1rem
+    font-weight: 400
+    margin: 0 0 1rem 0
+
+.main
+    &__title
+        font-size: 1.5rem
+        font-weight: 700
+        line-height: 2rem
+        align-self: flex-start
+        padding: 0 0 0.5rem 0
+        margin: 0 0 2rem 0
+        display: inline-block
+        position: relative
+        &::after
+            content: ''
+            width: 120%
+            height: 4px
+            background: var(--main)
+            border-radius: 8px
+            position: absolute
+            left: 20%
+            bottom: 0
+
+ul
+    list-style-type: none
+    padding: 0
+    li
+        line-height: 1.5rem
+        background: url(../img/icons/ok.svg) no-repeat 1rem 0
+        padding: 0 0 1rem 3rem
+
+.bc
+    font-size: 0.875rem
+    color: var(--gray)
+    padding: 2rem 0
+
+.phone
+    line-height: 2rem
+
+.search
+    margin: 0 2rem
+    &__btn
+        line-height: 1.8rem
+        border-bottom: 1px dashed var(--text)
+        padding: 0 2rem 0 0
+        cursor: pointer
+        
+
+.btn
+    line-height: 2.5rem
+    background: var(--main)
+    border: 1px solid var(--main)
+    border-radius: 8px
+    padding: 0 1rem
+    cursor: pointer
+    &:hover
+        background: var(--main__hover)
+        border: 1px solid var(--main__hover)
+        transition: 0.3s
+    &--stroke
+        background: none
+        border: 1px solid var(--text)
+        &:hover
+            color: #fff
+            background: var(--gray)
+            border: 1px solid var(--gray)
+
+.btns
+    display: flex
+    .btn
+        margin: 0 20px 0 0
+
+.blocklink
+    background: url(../img/icons/arrow__external.svg) no-repeat top 1rem right 1rem var(--bg__gray)
+    border-radius: 10px
+    padding: 1.875rem 1.5rem
+    margin: 3rem 0 0 0
+    display: block
+    &__title
+        font-weight: 600
+        margin: 0 0 1rem 0
+    &__description
+        font-size: 0.875rem
+        color: var(--gray)
+
+.category
+    margin: 4rem 0
+    &__item
+        text-align: center
+        background: var(--bg__gray)
+        border-radius: 10px
+        padding: 1rem
+        display: block
+    &__img
+        height: 64px
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        margin: 0 0 1rem 0
+        img
+            width: unset
+            height: unset
+    &__title
+        font-size: 0.9rem
+        font-weight: 600
+
+.sidebar
+    position: sticky
+    top: 20px
+    &__title
+        font-size: 1.125rem
+        font-weight: 600
+        margin: 0 0 1.5rem 0
+    &__item
+        font-weight: 600
+        border-bottom: 1px solid var(--stroke)
+        padding: 0 0 1rem 0
+        margin: 0 0 1rem 0
+        display: block
+        &:hover
+            text-decoration: underline
+
+.map
+    margin: 0
+    #map-wrap
+        height: 400px
+        position: relative
+        overflow: hidden
+    iframe
+        width: 100%
+        border: none
+
+.footer
+    font-size: 1rem
+    color: #fff
+    background: var(--text)
+    padding: 4rem 0
+    &__title
+        font-size: 1.5rem
+        font-weight: 500
+        margin: 0 0 2rem 0
+    &__subtitle
+        font-size: 0.9rem
+        font-weight: 400
+        margin: 0 0 1rem 0
+        opacity: 0.5
+        &--social
+            margin-top: 1.5rem
+    &__link
+        font-size: 0.9rem
+        display: block
+        margin: 0 1rem 1rem 0
+    &__branch
+        margin: 2rem 0 0 0
+    &__phone
+        font-size: 0.9rem
+        line-height: 1.25rem
+        margin: 0 1rem 0 0
+    &__social
+        width: 32px
+        height: 32px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        margin: 0 6px 0 0
+        cursor: pointer
+        &.telegram
+            background: var(--telegram)
+            border-radius: 50%
+        &.whatsapp
+            background: var(--whatsapp)
+            border-radius: 50%
+            img
+                width: 20px
+                height: 20px
+                transform: translateX(1px)
+        img
+            width: 16px
+            height: 16px
+            object-fit: contain
+            filter: brightness(400%)
+            transform: translateX(-1px)
+    iframe
+        height: 100%
+        border-radius: 30px
+
+.copyright
+    font-size: 0.9rem
+    color: var(--gray)
+    line-height: 1.2
+    background: var(--bg__footer)
+    border-top: 1px solid var(--stroke__light)
+    padding: 1rem 0
+    margin: 0
+
+.slick
+    &-slider
+        position: relative
+    &-slide
+        &:focus
+            outline: none
+    &-next
+        width: 2rem
+        height: 2rem
+        font-size: 0
+        background: url(../img/icons/arrow__right.svg) no-repeat 50% #fff
+        border: none
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        right: 0.5rem
+        z-index: 1
+        transform: translateY(-50%)
+        cursor: pointer
+        -webkit-appearance: none
+    &-prev
+        width: 2rem
+        height: 2rem
+        font-size: 0
+        background: url(../img/icons/arrow__left.svg) no-repeat 50% #fff
+        border: none
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        left: 0.5rem
+        z-index: 1
+        transform: translateY(-50%)
+        cursor: pointer
+        -webkit-appearance: none
+    &-disabled
+        opacity: 0.5
+
+@media screen and (max-width: 1180px)
+    html
+        font-size: 14px
+
+    .row
+        flex-wrap: wrap
+        margin: 0 -10px
+    .col-20
+        width: 33.33%
+    .col-25
+        width: 33.33%
+    [class^=col]
+        padding: 10px
+
+    .header
+        .row
+            flex-wrap: nowrap
+            .row
+                flex-wrap: wrap
+                padding: 0 20px
+        &__search
+            width: 100%
+            margin: 0 0 10px 0
+        nav
+            display: none
+
+    .search
+        margin: 0 2rem 0 auto
+
+@media screen and (max-width: 768px)
+    body
+        font-size: 14px
+        &.unscroll
+            padding: 0
+
+    .only-xs
+        display: block
+    .only-md
+        display: none
+
+    .row
+        flex-wrap: wrap
+    .d-flex
+        flex-wrap: wrap
+    [class^=col]
+        width: 100%
+        padding: 10px 20px
+
+    .header
+        .row
+            flex-wrap: wrap
+
+    h2
+        text-align: left
+
+    header
+        nav
+            display: none
+        .btn
+            display: none
+
+    .newsletter
+        .row
+            padding: 3rem 2rem
+
+
+
+@import layout/banner
+@import layout/icons
+@import layout/logical
+@import layout/service
+@import layout/tabs
+@import layout/features
+@import layout/docs
+@import layout/blog
+@import layout/form
+

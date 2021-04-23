@@ -1,0 +1,1 @@
+.tab__item{opacity:.5;cursor:pointer}.tab__item.active{opacity:1}.tab__title{font-size:1.25rem;font-weight:500;line-height:2rem;margin:2rem 0;display:inline-block;position:relative}.tab__title::after{content:"";width:80%;height:2px;background:var(--main);border-radius:8px;position:absolute;left:25%;bottom:0}/*# sourceMappingURL=tabs.css.map */

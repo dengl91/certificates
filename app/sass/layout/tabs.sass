@@ -1,0 +1,29 @@
+// 
+// Theme Name: New Clean Template
+// tabs.sass
+//
+// app/sass/layout/
+//
+
+.tab
+    &__item
+        opacity: 0.5
+        cursor: pointer
+        &.active
+            opacity: 1
+    &__title
+        font-size: 1.25rem
+        font-weight: 500
+        line-height: 2rem
+        margin: 2rem 0
+        display: inline-block
+        position: relative
+        &::after
+            content: ''
+            width: 80%
+            height: 2px
+            background: var(--main)
+            border-radius: 8px
+            position: absolute
+            left: 25%
+            bottom: 0

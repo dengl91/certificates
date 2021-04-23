@@ -1,0 +1,37 @@
+// 
+// Theme Name: New Clean Template
+// features.sass
+//
+// app/sass/layout/
+//
+
+.features
+    &::after
+        content: ''
+        width: calc((var(--container) * 0.8) + ((100vw - var(--container)) / 2))
+        height: 100%
+        background: var(--stroke)
+        position: absolute
+        top: 0
+        right: 0
+    &__content
+        display: flex
+        justify-content: space-between
+    &__item
+        width: 30%
+        text-align: center
+        background: #fff
+        border-radius: 8px
+        padding: 3rem 1rem
+    &__img
+        height: 4rem
+        margin: 0 0 2rem 0
+        img
+            object-fit: contain
+    &__title
+        font-size: 1.125rem
+        font-weight: 500
+        margin: 0 0 1.25rem 0
+    &__description
+        font-size: 0.875rem
+        color: var(--gray)
