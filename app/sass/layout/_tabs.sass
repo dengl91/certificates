@@ -23,13 +23,15 @@
         position: relative
         &::after
             content: ''
-            width: 80%
+            width: 60px
             height: 2px
             background: var(--main)
             border-radius: 8px
             position: absolute
-            left: 25%
-            bottom: 0
+            right: -30px
+            bottom: -2px
             transition: 0.4s
             [class*=item]:hover &
-                width: 90%
+                width: 80%
+            [class*=item].active &
+                width: 80%
