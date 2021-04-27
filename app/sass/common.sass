@@ -245,6 +245,10 @@ nav
         &:hover
             &::after
                 top: 0
+        &.active
+            color: var(--gray)
+            &::after
+                top: 0
 
 select
     width: 100%
@@ -320,10 +324,11 @@ ul
         background: url(../img/icons/ok.svg) no-repeat 1rem 0
         padding: 0 0 1rem 3rem
 
+.tar
+    text-align: right
+
 .bc
-    font-size: 0.875rem
-    color: var(--gray)
-    padding: 2rem 0
+    padding: 3rem 0 1rem 0
 
 .phone
     line-height: 2rem
@@ -665,4 +670,5 @@ ul
 @import layout/docs
 @import layout/blog
 @import layout/form
+@import layout/content
 

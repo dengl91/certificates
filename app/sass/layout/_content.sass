@@ -1,0 +1,96 @@
+// 
+// Theme Name: New Clean Template
+// _content.sass
+//
+// app/sass/layout/
+//
+
+.content
+    padding: 0 0 3rem 0
+    &--cat
+        position: relative
+        &::after
+            content: ''
+            width: 60%
+            height: calc(100% - 200px)
+            background: url(../img/cat__bg.jpg) no-repeat var(--stroke)
+            background-size: 100% 80%
+            position: absolute
+            top: 200px
+            right: 0
+    h1
+        font-size: 1.5rem
+        font-weight: 700
+        margin: 0 0 1rem 0
+    &__subtitle
+        color: var(--gray)
+    &__quote
+        max-width: 320px
+        font-size: 1.125rem
+        font-weight: 500
+        text-align: right
+        margin: 0 0 0 auto
+
+.cat
+    margin: 2rem 0
+    &__tab
+        font-size: 1.25rem
+        font-weight: 500
+        margin: 1rem 1rem 0 0
+        position: relative
+        &::after
+            content: ''
+            width: 70%
+            height: 2px
+            background: var(--main)
+            border-radius: 8px
+            position: absolute
+            right: 0
+            bottom: -4px
+            transition: 0.4s
+    &__content
+        display: flex
+        flex-wrap: wrap
+        margin: 0 0 5rem 0
+    &__item
+        width: 33.33%
+        min-height: 6rem
+        font-weight: 500
+        background: #fff
+        border: 1px solid var(--stroke)
+        padding: 1.25rem
+        position: relative
+        &::after
+            content: ''
+            width: 20px
+            height: 20px
+            background: url(../img/icons/arrow__right.svg) no-repeat 50% #fff
+            border-radius: 50%
+            position: absolute
+            right: 1.25rem
+            bottom: 1.25rem
+            opacity: 0
+        &:hover
+            background: var(--main)
+            border-color: var(--main)
+            &::after
+                opacity: 1
+        &:first-child
+            border-radius: 8px 0 0 0
+        &:nth-child(3)
+            border-radius: 0 8px 0 0
+        &:last-child
+            border-radius: 0 0 8px 0
+        &:nth-last-child(3)
+            border-radius: 0 0 0 8px
+        &.empty
+            pointer-events: none
+
+@media (max-width: 1180px)
+    .content
+        &--cat
+            &::after
+                background-size: auto 80%
+    .cat
+        .col-70
+            width: 100%
