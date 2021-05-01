@@ -18,6 +18,9 @@
     &__content
         display: flex
         flex-wrap: wrap
+        display: none
+        &.active
+            display: flex
     &__item
         width: 50%
         min-height: 6rem
@@ -56,3 +59,11 @@
     .service
         .pl
             padding: 0 10px
+
+@media (max-width: 768px)
+    .service
+        &__item
+            min-height: unset
+            width: 100%
+        .pl
+            padding: 0 20px

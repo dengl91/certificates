@@ -80,3 +80,30 @@
         &__short-item
             &:last-child
                 margin: 0
+
+@media (max-width: 768px)
+    .blog
+        z-index: 1
+        &::after
+            width: 92%
+            left: 4%
+        .container
+            padding: 0 40px
+        &__content
+            .slick
+                &-list
+                    margin: 0 -20px 0 0
+                &-slide
+                    padding: 0
+                    margin: 0 0 0 20px
+        &__img
+            height: 42vw
+        &__short-item
+            margin: 4rem 0 0 0 !important
+            &:last-child
+                margin: 0 !important
+            span
+                &::after
+                    width: 150px
+                    left: auto
+                    right: -20px

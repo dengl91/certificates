@@ -17,21 +17,35 @@
             <a href="/" class="logo">
                 <img src="public/img/logo.svg" alt="Сертификаты">
             </a>
-            <div class="d-flex flex-col">
+            <div class="d-flex flex-col only-md">
                 <a href="tel:+375 29 767-50-73" class="phone">+375 29 767-50-73</a>
                 <a href="tel:+375 44 787-50-73" class="phone">+375 44 787-50-73</a>
             </div>
-            <nav>
+            <nav class="nav">
+                <div class="search__content only-xs">
+                    <input type="text" class="search__input" name="s" placeholder="Введите слово или словосочетание">
+                    <span class="search__clear"></span>
+                    <input type="submit" class="search__submit" value="Поиск" disabled>
+                </div>
                 <a href="">Услуги</a>
                 <a href="">О компании</a>
                 <a href="">Документация</a>
                 <a href="">Вопросы</a>
                 <a href="">Контакты</a>
+                <div class="d-flex flex-col only-xs">
+                    <a href="tel:+375 29 767-50-73" class="phone">+375 29 767-50-73</a>
+                    <a href="tel:+375 44 787-50-73" class="phone">+375 44 787-50-73</a>
+                </div>
+                <div class="btn btn--stroke only-xs">Консультация</div>
             </nav>
-            <div class="search">
+            <div class="search only-md">
                 <div class="search__btn" data-control='modal--search'>Поиск</div>
             </div>
-            <div class="btn btn--stroke">Консультация</div>
+            <div class="btn btn--stroke only-md">Консультация</div>
+            <div class="menu-btn" data-active data-control="nav">
+                <div class="menu-btn__item"></div>
+                <div class="menu-btn__item"></div>
+            </div>
         </div>
     </header>
 
@@ -60,22 +74,44 @@
             <h2 class="main__title animate__animated animate__fadeIn delay--200">Услуги</h2>
             <div class="row">
                 <div class="col-40 pl">
-                    <div class="tab__item active">
+                    <div class="tab__item active" data-toggle data-navfor="service__content">
                         <div class="tab__title">Сертификация продукции</div>
                     </div>
-                    <div class="tab__item">
-                        <div class="tab__title">
-                            Системы менеджмента
-                        </div>
+                    <div class="tab__item" data-toggle data-navfor="service__content">
+                        <div class="tab__title">Системы менеджмента</div>
                     </div>
-                    <div class="tab__item">
+                    <div class="tab__item" data-toggle data-navfor="service__content">
                         <div class="tab__title">Другие услуги</div>
                     </div>
                 </div>
                 <div class="col-60">
-                    <div class="service__content">
+                    <div class="service__content active">
                         <a href="" class="service__item">Мебель</a>
                         <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                    </div>
+                    <div class="service__content">
+                        <a href="" class="service__item">Мебель 2</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование 2</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                        <a href="" class="service__item">Мебель</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование</a>
+                    </div>
+                    <div class="service__content">
+                        <a href="" class="service__item">Мебель 3</a>
+                        <a href="" class="service__item">Промышленное и аналогичное оборудование 3</a>
                         <a href="" class="service__item">Мебель</a>
                         <a href="" class="service__item">Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование. Промышленное и аналогичное оборудование</a>
                         <a href="" class="service__item">Мебель</a>
@@ -153,11 +189,11 @@
             <div class="row">
                 <div class="col-50 d-flex flex-col">
                     <a href="/blog" class="main__title">Блог</a>
-                    <a href="" class="blog__short-item">
+                    <a href="" class="blog__short-item only-md">
                         <div class="blog__date">10.11.2020</div>
                         <div class="blog__short-title">Оказывается, сознание соотечественников не замутнено<span></span></div>
                     </a>
-                    <a href="" class="blog__short-item">
+                    <a href="" class="blog__short-item only-md">
                         <div class="blog__date">10.11.2020</div>
                         <div class="blog__short-title">Оказывается, сознание соотечественников не замутнено<span></span></div>
                     </a>
@@ -204,6 +240,14 @@
                             </a>
                         </div>
                     </div>
+                    <a href="" class="blog__short-item only-xs">
+                        <div class="blog__date">10.11.2020</div>
+                        <div class="blog__short-title">Оказывается, сознание соотечественников не замутнено<span></span></div>
+                    </a>
+                    <a href="" class="blog__short-item only-xs">
+                        <div class="blog__date">10.11.2020</div>
+                        <div class="blog__short-title">Оказывается, сознание соотечественников не замутнено<span></span></div>
+                    </a>
                 </div>
             </div>
         </div>
