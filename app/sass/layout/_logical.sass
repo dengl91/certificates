@@ -15,8 +15,15 @@
     &.active
         max-height: 400vh
         transition: 0.4s ease-in
+    .content &
+        background: var(--stroke)
+        border-radius: 8px
+        padding: 0 1.25rem
+        margin: 0 0 0.5rem 0
     &__content
         padding: 0 100px
+        .content &
+            padding: 2rem 0
     &__title
         font-weight: 500
         padding: 20px 20px 20px 0
@@ -74,6 +81,19 @@
         background: #fff
         border-radius: 8px
         padding: 40px 100px
+    &--page
+        background: var(--stroke)
+        &::after
+            height: 80%
+            top: 0
+            z-index: 0
+
+.chat
+    width: 100%
+    height: 460px
+    background: var(--stroke)
+    border-radius: 8px
+    margin: 0 0 5rem 0
 
 @media (max-width: 1180px)
     .faq

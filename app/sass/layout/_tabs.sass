@@ -21,20 +21,37 @@
         margin: 2rem 0
         display: inline-block
         position: relative
-        &::after
-            content: ''
-            width: 60px
-            height: 2px
-            background: var(--main)
-            border-radius: 8px
-            position: absolute
-            right: -30px
-            bottom: -2px
-            transition: 0.4s
-            [class*=item]:hover &
-                width: 80%
-            [class*=item].active &
-                width: 80%
+        span
+            position: relative
+            &::after
+                content: ''
+                width: 60px
+                height: 2px
+                background: var(--main)
+                border-radius: 8px
+                position: absolute
+                right: -30px
+                bottom: -8px
+                transition: 0.4s
+                [class*=item]:hover &
+                    width: 160px
+                [class*=item].active &
+                    width: 160px
+    &__content
+        display: flex
+        margin: 0 0 1.5rem 0
+        > a
+            opacity: 0.5
+            &.active
+                opacity: 1
+        .main
+            &__subtitle
+                margin-right: 20%
+
+// static logic
+.content .tab__item.active .tab__title::after
+    width: 60%
+    right: 30px
 
 @media (max-width: 768px)
     .tab
