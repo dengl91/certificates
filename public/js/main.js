@@ -73,6 +73,13 @@
             }
         }
 
+        // menu
+
+        $('.menu-btn').on('click', function() {
+            $('html, body').animate( {scrollTop: 0}, 0 );
+            $('body').toggleClass('unscroll');
+        });
+
         // Lazy and counters
         $(window).scroll( function() {
             $('[data-count]').each(function () {
