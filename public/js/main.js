@@ -4,7 +4,7 @@
     $(document).ready(function() {
 
         $('[data-toggle]').on('click', function() {
-            $(this).addClass('active').siblings().removeClass('active');
+            $(this).toggleClass('active').siblings().removeClass('active');
         });
 
         $('[data-active]').on('click', function() {
