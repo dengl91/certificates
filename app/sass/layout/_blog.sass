@@ -16,11 +16,14 @@
         top: 0
         left: 3%
     &__item
+        max-width: 300px
         background: #fff
         border-radius: 8px
         padding: 0 1.25rem 1.25rem 1.25rem
         margin: 0 0 2rem 0
         display: block
+        [class*=news] &
+            background: var(--stroke)
     &__img
         margin: 0 -1.25rem
         img
@@ -34,6 +37,7 @@
         margin: 0 0 2rem 0
     &__date
         font-size: 0.875rem
+        margin: 0 0 0.5rem 0
         position: relative
     &__short-item
         max-width: 400px
@@ -61,6 +65,56 @@
                     width: 100px
                     left: -70px
 
+.news
+    padding: 0 0 3rem 0
+    &__content
+        padding: 0 0 3rem 0
+        margin: 0 0 3rem 0
+        .slick
+            &-slide
+                > div
+                    display: flex
+                    justify-content: space-between
+            &-next
+                top: 100%
+                left: 52%
+            &-prev
+                top: 100%
+                left: 48%
+    &__date
+        font-size: 0.875rem
+
+.intro
+    &__first
+        border-right: 1px solid var(--stroke)
+    &__item
+        max-width: 470px
+        display: block
+        [class*=second] &
+            max-width: unset
+            padding: 0 0 2.5rem 0
+    &__img
+        height: 270px
+        margin: 0 0 2.5rem 0
+        img
+            border-radius: 8px
+    &__title
+        max-width: 470px
+        font-weight: 500
+        margin: 0 0 1.25rem 0
+    &__description
+        max-width: 470px
+        font-size: 0.875rem
+        color: var(--gray)
+        margin: 0 0 2rem 0
+    &__second
+        padding: 0 10px 0 20px
+    &__sep
+        width: 100%
+        height: 1px
+        background: var(--stroke)
+        margin: 0 0 2.5rem 0
+
 @media (max-width: 1180px)
     .blog
         &::after
@@ -75,6 +129,8 @@
                 width: 33.33%
         &__item
             margin: 0
+            [class*=news] &
+                margin: 0 1rem 2rem 0
         &__img
             height: 18vw
         &__short-item

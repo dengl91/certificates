@@ -59,6 +59,14 @@
             infinite: false
         });
 
+        $('.news__content').slick({
+            slidesPerRow: 3,
+            rows: 2,
+            arrows: true,
+            infinite: false,
+            dots: true
+        });
+
         $(window).resize( function() {
             if ( $(window).width() < 768 ) {
                 if ( !$('.blog__content').hasClass('slick-slider') ) {
