@@ -64,7 +64,15 @@
             rows: 2,
             arrows: true,
             infinite: false,
-            dots: true
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesPerRow: 1,
+                    }
+                }
+            ]
         });
 
         $(window).resize( function() {
