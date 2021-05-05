@@ -71,6 +71,9 @@ a
     text-decoration: none
 *
     box-sizing: border-box
+.wp-admin
+    *
+        box-sizing: unset
 input:focus
     outline: none
 button:focus
@@ -172,26 +175,27 @@ section
     padding: 3rem 0
     position: relative
 
-input
-    width: 100%
-    font-family: 'Geometria', sans-serif
-    font-size: 0.875rem
-    color: var(--gray)
-    line-height: 2.5rem
-    background: var(--stroke)
-    border: 1px solid var(--gray)
-    border-radius: 8px
-    padding: 0 1.25rem
-    margin: 0
-    -webkit-appearance: none
-    &[type=submit]
-        color: var(--text)
-        background: var(--main)
-        border: 1px solid var(--main)
-        cursor: pointer
-        &:hover
-            background: var(--main__hover)
-            border: 1px solid var(--main__hover)
+.page
+    input
+        width: 100%
+        font-family: 'Geometria', sans-serif
+        font-size: 0.875rem
+        color: var(--gray)
+        line-height: 2.5rem
+        background: var(--stroke)
+        border: 1px solid var(--gray)
+        border-radius: 8px
+        padding: 0 1.25rem
+        margin: 0
+        -webkit-appearance: none
+        &[type=submit]
+            color: var(--text)
+            background: var(--main)
+            border: 1px solid var(--main)
+            cursor: pointer
+            &:hover
+                background: var(--main__hover)
+                border: 1px solid var(--main__hover)
 
 .header
     height: 100px
@@ -276,17 +280,6 @@ nav
         .active &
             transform: translateY(-2px) rotate(-45deg)
 
-select
-    width: 100%
-    font-size: 0.875rem
-    color: var(--gray)
-    line-height: var(--select)
-    background: url(../img/icons/arrow__down.svg) no-repeat right 1rem top 50% #fff
-    border: 1px solid var(--stroke)
-    border-radius: 4px
-    padding: 0 1rem
-    -webkit-appearance: none
-
 .social
     display: flex
     align-items: center
@@ -359,6 +352,7 @@ h3
             position: absolute
             left: 30%
             bottom: 6px
+            transition: 0.3s
 
 ul
     list-style-type: none
@@ -391,6 +385,8 @@ p
         align-items: center
         padding: 20px
         margin: 9px 6.5%
+        .admin-bar &
+            margin-top: 42px
         input
             &[type=text]
                 font-size: 1rem
@@ -641,7 +637,7 @@ p
         margin: 0
         position: absolute
         top: 100%
-        left: 42%
+        left: 0
         transform: translateY(-50%)
         li
             color: var(--gray)

@@ -56,6 +56,7 @@
             slidesPerRow: 3,
             rows: 2,
             arrows: true,
+            dots: true,
             infinite: false
         });
 

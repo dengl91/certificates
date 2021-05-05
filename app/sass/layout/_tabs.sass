@@ -42,8 +42,16 @@
         margin: 0 0 1.5rem 0
         > a
             opacity: 0.5
+            &:hover
+                opacity: 1
+                &::after
+                    width: 100%
             &.active
                 opacity: 1
+                cursor: default
+                &:hover
+                    &::after
+                        width: 80%
         .main
             &__subtitle
                 margin-right: 20%

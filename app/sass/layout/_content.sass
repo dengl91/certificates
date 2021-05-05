@@ -6,7 +6,7 @@
 //
 
 .content
-    padding: 0 0 3rem 0
+    padding: 0 0 1rem 0
     &--cat
         position: relative
         &::after
@@ -111,7 +111,8 @@
     margin: 0 0 2rem 0
     &--pdf
         color: var(--link)
-        line-height: 2rem
+        font-weight: 400
+        line-height: 32px
         background: url(../img/icons/pdf.svg) no-repeat 0 50%
         padding: 0 0 0 40px
         margin: 0 0 1rem 0
@@ -124,7 +125,7 @@
             border-top: 1px dashed var(--link)
             position: absolute
             left: 40px
-            bottom: 2px
+            bottom: 4px
     &--email
         background: url(../img/icons/email.svg) no-repeat 0 50%
         padding: 0 0 0 40px
@@ -184,6 +185,8 @@
         font-size: 1.125rem
         font-weight: 500
         margin: 0 0 1.25rem 0
+    &__description
+        max-height: 7.5rem
     &__link
         font-size: 1.125rem
         font-weight: 500
