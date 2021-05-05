@@ -109,8 +109,6 @@
 .link
     font-weight: 500
     margin: 0 0 2rem 0
-    &:hover
-        color: var(--gray)
     &--pdf
         color: var(--link)
         font-weight: 400
@@ -145,6 +143,11 @@
         padding: 2rem 0
         &.active
             display: flex
+
+.hover
+    .link
+        &:hover
+            color: var(--gray)
 
 .phone
     &__content
@@ -252,12 +255,15 @@
             left: 0
 
 .error
+    height: calc(100vh - 100px)
     .container
         display: flex
         flex-direction: column
+        justify-content: center
     img
+        max-width: 100%
         align-self: center
-        margin: 2rem 0
+        margin: 3rem 0
     &__btn
         background: var(--main)
         border-radius: 8px
