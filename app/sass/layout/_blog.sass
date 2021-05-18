@@ -29,12 +29,16 @@
         img
             border-radius: 8px 8px 0 0
     &__title
+        height: 5rem
         font-weight: 500
         margin: 1rem 0 1rem 0
+        overflow: hidden
     &__excerpt
+        max-height: 6.5rem
         font-size: 0.875rem
         color: var(--gray)
         margin: 0 0 2rem 0
+        overflow: hidden
     &__date
         font-size: 0.875rem
         margin: 0 0 0.5rem 0
@@ -58,17 +62,15 @@
                 background: var(--main)
                 border-radius: 8px
                 position: absolute
-                left: -30px
                 top: 1.25rem
+                right: -30px
                 transition: 0.4s
                 [class*=item]:hover &
                     width: 100px
-                    left: -70px
 
 .news
     padding: 0 0 3rem 0
     &__content
-        padding: 0 0 3rem 0
         margin: 0 0 3rem 0
         .slick
             &-slide
@@ -104,9 +106,11 @@
         margin: 0 0 1.25rem 0
     &__description
         max-width: 470px
+        max-height: 6.4rem
         font-size: 0.875rem
         color: var(--gray)
         margin: 0 0 2rem 0
+        overflow: hidden
     &__second
         padding: 0 10px 0 20px
     &__sep
@@ -114,6 +118,44 @@
         height: 1px
         background: var(--stroke)
         margin: 0 0 2.5rem 0
+        &:last-child
+            display: none
+
+.cases-nav
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 0 20px 0
+    position: relative
+    z-index: 1
+
+.cases-nav-item
+    min-width: 40px
+    height: 40px
+    color: var(--text)
+    font-weight: 600
+    text-align: center
+    line-height: 40px
+    border-radius: 50%
+    padding: 0 10px
+    &:active
+        color: inherit
+    &.active
+        background: #ffdb4d
+        cursor: default
+    &.next, &.prev
+        background: url(../img/icons/nav-right.svg) no-repeat 50%
+        border: none
+    &.prev
+        margin: 0 10px
+    &.disabled
+        background: url(../img/icons/nav-right.svg) no-repeat 50%
+        border: none
+        opacity: 0.5
+        pointer-events: none
+        filter: grayscale(1)
+    &.prev
+        transform: rotateY(180deg)
 
 @media (max-width: 1180px)
     .blog
@@ -137,6 +179,10 @@
             &:last-child
                 margin: 0
 
+    .intro
+        &__title
+            margin: 0.5rem 0 1rem 0
+
 @media (max-width: 768px)
     .blog
         z-index: 1
@@ -149,7 +195,7 @@
             .slick
                 &-list
                     padding: 0 20px 0 0
-                    margin: 0 -20px 0 20px
+                    margin: 0 -20px
                 &-slide
                     padding: 0
                     margin: 0 10px 0 0
@@ -158,7 +204,7 @@
             .news &
                 margin: 0 0 2rem 0
         &__img
-            height: 42vw
+            height: 44vw
             .news &
                 height: 180px
         &__short-item
@@ -167,5 +213,16 @@
                 margin: 0 !important
             span
                 &::after
-                    width: 120px
-                    left: -100px
+                    right: -10px
+
+    .intro
+        &__item
+            max-width: 100%
+            [class*=first] &
+                border-bottom: 1px solid var(--stroke)
+                padding: 0 0 1rem 0
+                margin: 0 0 1rem 0
+        &__img
+            max-width: 100%
+        &__second
+            padding: 0 20px

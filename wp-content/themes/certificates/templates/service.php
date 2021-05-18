@@ -24,58 +24,56 @@ get_header(); ?>
                     <div class="content__quote"><?php the_field('text_right'); ?></div>
                 </div>
             </div>
+            <p class="has-text-align-right only-xs"><strong>Вы можете связаться с нами:</strong><br><strong><a href="tel:+375297675073" data-type="tel" data-id="tel:+375297675073">+375 29 767-50-73</a><br><a href="tel:+375447845073">+375 44 787-50-73</a></strong></p>
             <div class="cat">
-                <div class="row">
-                    <div class="col-20">
-                        <div class="cat__tab">Сертификация<br> продукции</div>
-                    </div>
-                    <div class="col-70">
-                        <div class="cat__content">
-                            <a href="" class="cat__item">Мебель</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                            <a href="" class="cat__item">Электроника, электрика и электротехническая продукция</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                            <a href="" class="cat__item">Мебель</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                            <a href="" class="cat__item">Игрушки/детские товары</a>
-                            <a href="" class="cat__item empty"></a>
-                            <a href="" class="cat__item empty"></a>
+                <?php
+                $terms = get_terms( 'service_cat' );
+                $num = 0;
+                foreach( $terms as $term ) {
+                ?>
+                    <div class="row">
+                        <div class="col-20">
+                            <a href="<?php echo get_term_link($term->term_id); ?>" class="cat__tab"><?php echo $term->name; ?></a>
+                        </div>
+                        <div class="col-70">
+                            <div class="cat__content">
+                                <?php
+                                $args = array(
+                                    'posts_per_page' => -1,
+                                    'post_type'      => 'service',
+                                    'order_by'       => 'date',
+                                    'order'          => 'ASC',
+                                    'tax_query'      => array( 
+                                        array(
+                                            'taxonomy' => 'service_cat',
+                                            'terms'    => $term->term_id
+                                        )
+                                    )
+                                );
+                                $num = 0;
+                                $myposts = get_posts( $args );
+                                foreach ( $myposts as $post ) { setup_postdata($post);
+                                ?>
+                                    <a href="<?php the_permalink($post->ID); ?>" class="cat__item"><?php echo get_the_title($post->ID); ?></a>
+                                <?php
+                                    $num++;
+                                }
+                                wp_reset_postdata();
+                                ?>
+                                <?php
+                                    $rows = ceil($num / 3);
+                                    $add_cells = (3 * $rows) - $num;
+                                    for ($i = 1; $i <= $add_cells; $i++) {
+                                        echo '<a class="cat__item cat__item--add"></a>';
+                                    }                                    
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-20">
-                        <div class="cat__tab">Системы<br> менеджмента</div>
-                    </div>
-                    <div class="col-70">
-                        <div class="cat__content">
-                            <a href="" class="cat__item">Мебель</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                            <a href="" class="cat__item">Электроника, электрика и электротехническая продукция</a>
-                            <a href="" class="cat__item empty"></a>
-                            <a href="" class="cat__item empty"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-20">
-                        <div class="cat__tab">Другие услуги</div>
-                    </div>
-                    <div class="col-70">
-                        <div class="cat__content">
-                            <a href="" class="cat__item">Мебель</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                            <a href="" class="cat__item">Электроника, электрика и электротехническая продукция</a>
-                            <a href="" class="cat__item">Промышленное и аналогичное оборудование</a>
-                            <a href="" class="cat__item">Строительные материалы</a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    $num++;
+                }
+                ?>
             </div>
         </div>
     </section>

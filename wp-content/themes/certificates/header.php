@@ -44,20 +44,20 @@
                     <input type="submit" class="search__submit" value="Поиск" disabled>
                 </div>
                 <a href="/service" class="nav__service">Услуги</a>
-                <a href="">О компании</a>
-                <a href="">Документация</a>
-                <a href="">Вопросы</a>
-                <a href="">Контакты</a>
+                <a href="/about" class="nav__about">О компании</a>
+                <a href="/documents" class="nav__documents">Документация</a>
+                <a href="/faq" class="nav__faq">Вопросы</a>
+                <a href="/contact" class="nav__contact">Контакты</a>
                 <div class="d-flex flex-col only-xs">
                     <a href="tel:+375 29 767-50-73" class="phone">+375 29 767-50-73</a>
                     <a href="tel:+375 44 787-50-73" class="phone">+375 44 787-50-73</a>
                 </div>
-                <div class="btn btn--stroke only-xs">Консультация</div>
+                <div class="btn btn--stroke only-xs" data-control="modal--request">Консультация</div>
             </nav>
             <div class="search only-md">
                 <div class="search__btn" data-control='modal--search'>Поиск</div>
             </div>
-            <div class="btn btn--stroke only-md">Консультация</div>
+            <div class="btn btn--stroke only-md" data-control="modal--request">Консультация</div>
             <div class="menu-btn" data-active data-control="nav">
                 <div class="menu-btn__item"></div>
                 <div class="menu-btn__item"></div>
@@ -70,7 +70,7 @@
             <form action="/" class="search__content animate__animated animate__slideInDown animate__faster">
                 <input type="text" class="search__input" name="s" placeholder="Введите слово или словосочетание">
                 <span class="search__clear"></span>
-                <input type="submit" class="search__submit" value="Поиск" disabled>
+                <button type="submit" class="search__submit" value="Поиск" disabled>Поиск</button>
 			</form>
         </div>
     </div>

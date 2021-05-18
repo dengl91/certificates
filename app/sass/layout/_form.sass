@@ -6,7 +6,7 @@
 //
 
 .form
-    background: url(../img/logo__overlay.svg) no-repeat top -80px right 20px var(--stroke)
+    background: url(/public/img/logo__overlay.svg) no-repeat top -80px right 20px var(--stroke)
     padding: 200px 0 40px 0
     margin: -180px 0 0 0
     &__content
@@ -15,9 +15,10 @@
         border-radius: 8px
         padding: 80px 100px
         margin: 0 100px
+        position: relative
         .sidebar &
             padding: 20px
-            margin: 0
+            margin: 0 0 1rem 0
     &__title
         max-width: 440px
         font-size: 1.125rem
@@ -25,6 +26,22 @@
         margin: 0 0 2rem 0
         .sidebar &
             margin: 0 0 1.5rem 0
+    &__hint
+        color: var(--alert)
+        font-size: 0.875rem
+        text-align: right
+        line-height: 1.25rem
+        display: none
+        &.active
+            display: block
+        .sidebar &
+            margin: -15px 0 10px 0
+
+@media (max-width: 1180px)
+    .form
+        &__content
+            padding: 40px 2vw
+            margin: 0
 
 @media (max-width: 768px)
     .form

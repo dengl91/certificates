@@ -1,20 +1,39 @@
 <?php
 /**
- * Главная
+ * Шаблон отдельной записи (single.php)
  * @package WordPress
  * @subpackage your-clean-template-3
- * Template Name: Главная
- * Author URI: telegram @dhljob
  */
 get_header(); ?>
 
-    <?php the_content(); ?>
+    <section class="bc">
+        <div class="container">
+            <a href="/" class="bc__item">Главная</a>
+            &nbsp;-&nbsp;
+            <a href="/documents/" class="bc__item">Документация</a>
+        </div>
+    </section>
 
-    <section class="form">
+    <section class="content">
+        <div class="container">
+            <h1><?php the_title(); ?></h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <object data="<?php the_field('pdf'); ?>">
+                <p>Ваш браузер не поддерживает просмотр pdf внутри страницы</p>
+                <p><a href="<?php the_field('pdf'); ?>" target="_blank">Открыть в новой вкладке</a></p>
+            </object>
+        </div>
+    </section>
+
+    <section>
         <div class="container">
             <div class="form__content">
                 <div class="form__title">Заполните форму и закажите бесплатную консультацию у наших специалистов</div>
-                <form class="request-form">
+                <form>
                     <div class="row">
                         <div class="col-33">
                             <input type="text" name="username" placeholder="Имя">

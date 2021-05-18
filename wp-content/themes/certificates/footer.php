@@ -6,6 +6,31 @@
  */
 ?>
 
+    <div class="modal modal--request">
+        <div class="container">
+            <div class="form__content animate__animated animate__zoomIn animate__faster">
+                <div class="form__title">Заполните форму и закажите бесплатную консультацию у наших специалистов</div>
+                <form class="request-form">
+                    <div class="row">
+                        <div class="col-33">
+                            <input type="text" name="username" placeholder="Имя">
+                        </div>
+                        <div class="col-33">
+                            <input type="text" name="phone" placeholder="Телефон*" required>
+                            <span class="form__hint">Обязательное поле</span>
+                        </div>
+                        <div class="col-33">
+                            <input type="submit" value="Заказать консультацию">
+                        </div>
+                    </div>
+                </form>
+                <div class="modal__close"></div>
+            </div>
+        </div>
+    </div>
+
+    <?php if ( !is_404() ) { ?>
+
 	<footer class="footer">
         <div class="container">
             <div class="row">
@@ -67,7 +92,9 @@
             </div>
         </div>
     </section>
+
+    <?php } ?>
 	
-<?php wp_footer(); // необходимо для работы плагинов и функционала  ?>
+<?php wp_footer(); ?>
 </body>
 </html>

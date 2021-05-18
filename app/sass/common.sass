@@ -19,6 +19,7 @@
     --blue: #60acd4
     --blue__light: #E9EFFB
     --orage__blend: #fff5e4
+    --alert: #EB5757
     --ocean: #77c3c3
     --ocean__light: #e4f3f3
     --violet: #a465dd
@@ -43,16 +44,19 @@
     font-family: 'Geometria'
     font-weight: 400
     src: url('../fonts/Geometria.woff') format("woff")
+    font-display: swap
 
 @font-face
     font-family: 'Geometria'
     font-weight: 500
     src: url('../fonts/Geometria-Medium.woff') format("woff")
+    font-display: swap
 
 @font-face
     font-family: 'Geometria'
     font-weight: 700
     src: url('../fonts/Geometria-Bold.woff') format("woff")
+    font-display: swap
 
 html
     font-family: 'Geometria', sans-serif
@@ -71,15 +75,15 @@ a
     text-decoration: none
 *
     box-sizing: border-box
-.wp-admin
-    *
-        box-sizing: unset
 input:focus
     outline: none
 button:focus
     outline: none
 textarea:focus
     outline: none
+
+strong
+    font-weight: 500
 
 .container
     width: 100%
@@ -175,7 +179,7 @@ section
     padding: 3rem 0
     position: relative
 
-.page
+.container
     input
         width: 100%
         font-family: 'Geometria', sans-serif
@@ -196,6 +200,23 @@ section
             &:hover
                 background: var(--main__hover)
                 border: 1px solid var(--main__hover)
+        &.alert
+            border: 1px solid var(--alert)
+    button[type=submit]
+        font-family: 'Geometria', sans-serif
+        color: var(--text)
+        font-size: 0.875rem
+        line-height: 2.5rem
+        background: var(--main)
+        border: 1px solid var(--main)
+        border-radius: 8px
+        padding: 0 1.25rem
+        margin: 0
+        cursor: pointer
+        -webkit-appearance: none
+        &:hover
+            background: var(--main__hover)
+            border: 1px solid var(--main__hover)
 
 .header
     height: 100px
@@ -335,6 +356,7 @@ h3
             left: 20%
             bottom: 0
     &__subtitle
+        max-width: 90%
         font-size: 1.25rem
         font-weight: 500
         line-height: 2rem
@@ -354,9 +376,25 @@ h3
             bottom: 6px
             transition: 0.3s
 
-ul
-    list-style-type: none
-    padding: 0
+.archive
+    h2
+        font-size: 1.5rem
+        font-weight: 700
+        line-height: 2rem
+        align-self: flex-start
+        padding: 0 0 0.5rem 0
+        margin: 0 0 2rem 0
+        display: inline-block
+        position: relative
+        &::after
+            content: ''
+            width: 120%
+            height: 4px
+            background: var(--main)
+            border-radius: 8px
+            position: absolute
+            left: 20%
+            bottom: 0
 
 p
     max-width: 650px
@@ -378,7 +416,7 @@ p
         padding: 0 2rem 0 0
         cursor: pointer
     &__content
-        width: calc(100% - 250px)
+        width: calc(100% - 340px)
         background: #fff
         border-radius: 8px
         display: flex
@@ -408,7 +446,7 @@ p
     &__clear
         width: 19px
         height: 19px
-        background: url(../img/icons/plus.svg) no-repeat 50% var(--main)
+        background: url(/public/img/icons/plus.svg) no-repeat 50% var(--main)
         border-radius: 50%
         flex: 0 0 19px
         margin: 0 0 0 -20px
@@ -432,6 +470,21 @@ p
         display: flex
     &.swipeup
         animation: swipeUp 0.6s forwards
+    .container
+        display: flex
+        align-items: center
+        justify-content: center
+    &__close
+        width: 24px
+        height: 24px
+        background: url(../img/icons/close.svg) no-repeat 50%
+        position: absolute
+        top: 20px
+        right: 20px
+        transition: 0.3s
+        cursor: pointer
+        &:hover
+            transform: rotate(90deg)
     &--search
         .container
             height: auto
@@ -655,6 +708,16 @@ p
                 cursor: pointer
                 -webkit-appearance: none
 
+/* WP core */
+
+.wp-block-quote
+    color: var(--gray)
+    font-style: italic
+    margin: 40px 0
+
+.wp-block-image.size-large
+    margin: 1rem 0
+
 /* breakpoints */
 
 .only-xs
@@ -675,6 +738,7 @@ p
         padding: 10px
 
     .header
+        white-space: nowrap
         .row
             flex-wrap: nowrap
             .row
@@ -684,10 +748,19 @@ p
             width: 100%
             margin: 0 0 10px 0
         nav
-            display: none
+            overflow: auto
+            &::-webkit-scrollbar 
+                display: none
+            a
+                margin: 0 1rem 0 0
+                &::after
+                    display: none
 
     .search
         margin: 0 2rem 0 auto
+
+    .sidebar
+        width: 100%
 
 @media screen and (max-width: 768px)
     body
@@ -708,6 +781,9 @@ p
     [class^=col]
         width: 100%
         padding: 10px 20px
+
+    section
+        padding: 2rem 0
 
     .header
         .row
@@ -734,11 +810,10 @@ p
             margin: 0
             position: absolute
             top: 0
-            left: 0
-            transform: translateX(-100%)
+            left: -100%
             transition: 0.3s
             &.active
-                transform: translateX(0)
+                transform: translateX(100%)
             a
                 line-height: 2rem
                 padding: 0 1rem
@@ -748,6 +823,8 @@ p
             .btn
                 align-self: flex-start
                 margin: 1rem
+        .phone
+            margin: 0
 
     .search
         &__content
@@ -781,6 +858,15 @@ p
         &__title
             &::after
                 max-width: 180px
+        &__subtitle
+            .page-template-faq &
+                margin: 0
+                opacity: 0.5
+                &.active
+                    opacity: 1
+
+    .sidebar
+        margin-top: 2rem
 
     .slick
         &-dots
@@ -788,17 +874,28 @@ p
             transform: translate(-50%, 50%)
 
     .footer
+        padding: 3rem 0 2rem 0
         &__menu
             white-space: nowrap
             display: flex
+            margin: 0 20px 0 0
             overflow: auto
+        &__phone
+            width: 100%
         iframe
             height: 230px
             border-radius: 10px
 
     .copyright
+        line-height: 1.5rem
         .d-flex
             justify-content: center
+
+@media (orientation: landscape)
+    .header
+        nav
+            flex-direction: row
+            flex-wrap: wrap
 
 
 
